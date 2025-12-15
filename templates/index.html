@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Performance Predictor</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+            padding: 40px;
+        }
+
+        .box {
+            background: white;
+            padding: 20px;
+            width: 350px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #aaa;
+        }
+
+        input,
+        button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .result {
+            margin-top: 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h2>Student Performance Predictor</h2>
+
+        <form method="POST">
+            <input type="number" step="any" name="study_hours" placeholder="Study hours per day" required>
+            <input type="number" step="any" name="attendance" placeholder="Attendance (%)" required>
+            <input type="number" step="any" name="previous_marks" placeholder="Previous marks" required>
+            <input type="number" name="assignments_completed" placeholder="Assignments completed" required>
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction %}
+        <div class="result">{{ prediction }}</div>
+        {% endif %}
+    </div>
+
+</body>
+
+</html>
